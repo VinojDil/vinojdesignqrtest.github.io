@@ -9,7 +9,7 @@ body {
     margin: 0px;
     padding: 0;
     width: 100%;
-    height: 500px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +34,7 @@ body {
 
 /* Ensure images fit within the slides */
 .swiper-slide img {
-    width: 40%;
+    width: 50%;
     height: auto;
     display: block;
     margin: auto;
