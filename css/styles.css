@@ -34,7 +34,7 @@ body {
 
 /* Ensure images fit within the slides */
 .swiper-slide img {
-    width: 30%;
+    width: 40%;
     height: auto;
     display: block;
     margin: auto;
