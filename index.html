@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Page</title>
+    <title>Swiper Test</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
     <div class="container">
-        <div class="swiper-container">
+        <!-- Main Swiper -->
+        <div class="swiper-container main-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="images/4_2.png" alt="Image 1"></div>
                 <div class="swiper-slide"><img src="images/4_2.png" alt="Image 2"></div>
                 <div class="swiper-slide"><img src="images/4_2.png" alt="Image 3"></div>
                 <div class="swiper-slide"><img src="images/4_2.png" alt="Image 4"></div>
             </div>
-            <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
-            <!-- Add Navigation -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
 
+        <!-- Thumbnail Swiper -->
+        <div class="swiper-container thumb-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="4_2.png" alt="Thumb 1"></div>
+                <div class="swiper-slide"><img src="4_2.png" alt="Thumb 2"></div>
+                <div class="swiper-slide"><img src="4_2.png" alt="Thumb 3"></div>
+                <div class="swiper-slide"><img src="4_2.png" alt="Thumb 4"></div>
+            </div>
+        </div>
     </div>
 
-    <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- Initialize Swiper -->
     <script src="js/swiper-init.js"></script>
 </body>
 </html>
