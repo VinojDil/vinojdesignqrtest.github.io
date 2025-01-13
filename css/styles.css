@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Ensure the container takes up the full width and height */
+.container {
+    margin: 10px;
+    padding: 5px;
+    width: 98%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+/* Style the Swiper container */
+.swiper-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+/* Center the images within the slides */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+/* Ensure images fit within the slides */
+.swiper-slide img {
+    width: 40%;
+    height: 700px;
+    display: block;
+    margin: auto;
+}
+
+/* Optional: Customize pagination bullets */
+.swiper-pagination-bullet {
+    background: #007bff;
+}
+
+/* Optional: Customize navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #007bff;
+}
+
+
+@media (max-width: 768px) {
+    .item {
+        flex: 1 1 100%; /* Full width on small screens */
+    }
+}
