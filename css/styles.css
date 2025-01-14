@@ -1,127 +1,103 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
     padding: 5px;
 }
 
-/* Ensure the container takes up the full width and height */
 .container {
-    margin: 0px;
-    padding: 0;
     width: max-width;
     height: auto;
-    display: flex;
-    flex-direction: column;
+    justify-content:center;
     align-items: center;
-    justify-content: center;
     border: 1px solid black;
 }
 
-/* Style the Swiper container */
-.main-swiper {
-    width: 90%;
-    height: auto;
-    overflow: hidden;
-    border: 1px solid black; /* Add black 1px outline */
-    padding: 10px 0; /* Add 10px gap from top and bottom borders */
-    position: relative;
+.image-slider {
+    position: relative; /* Required for absolute positioning of controls */
+    border: 1px solid black; 
 }
 
-/* Center the images within the slides */
-.main-swiper .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100% - 20px);
-}
-
-/* Ensure images fit within the slides */
-.swiper-slide img {
-    width: 100%;
-    max-height: 100%;
-    margin: auto;
-    padding-bottom: 20px;
-}
-
-/* Position navigation buttons in the middle of the container */
-.swiper-button-next,
-.swiper-button-prev {
-    color: #007bff;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* Swiper slide below */
-/* Style the thumbnail Swiper container */
-.thumb-swiper {
-    width: 32%;
-    height: 150px;
-    overflow: hidden;
-    border: 1px solid black;
-    opacity: 1; 
-    padding: 5px 0; 
-}
-
-.thumb-swiper .swiper-slide {
-    width: auto;
-    margin: auto;
-    height: 100%;
-    padding: 1px 0;
-    display: flex;
-    justify-content: center;
-}
-
-.thumb-swiper .swiper-slide img {
-    width: auto;
-    max-height: 80%;
+.image-slider img {
+    width: 60%; /* Reduce size to 80% of the row */
+    height: auto; /* Maintain aspect ratio */
+    margin: auto; /* Center the image */
     display: block;
-    padding-left:10px;
-    padding-right:10px;
-    padding: 5px;
     border: 1px solid black;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add background for better visibility */
+    border-radius: 50%; /* Make the button circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-control-prev {
+    left: 60px; /* Position to the left of the image slider row */
+}
+
+.carousel-control-next {
+    right: 60px; /* Position to the right of the image slider row */
+}
+
+#imageDescription {
+    color: #333; /* Adjust text color */
+    font-size: 1rem; /* Adjust font size */
+    margin-top: 5px;
+    font-weight: 200;
+    text-align: center; /* Center-align the description text */
+}
+
+.video-slider {
+    margin-top: 50px;
+    border: 1px solid black; /* Center the image */
+}
+
+#videoCarousel .carousel-item {
+    height: auto; /* Adjust height as needed */
+  }
+
+#videoCarousel .carousel-item video {
+    width: 80%; /* Reduce size to 80% of the row */
+    height: auto; /* Maintain aspect ratio */
+    margin: auto; /* Center the image */
+    display: block;
+    border: 1px solid black;
+}
+
+#videoDescription {
+    color: #333; /* Adjust text color */
+    font-size: 1rem; /* Adjust font size */
+    margin-top: 5px;
+    font-weight: 200;
+    text-align: center; /* Center-align the description text */
+  }
+
+#rightAlignedText {
+    color: #333; /* Adjust text color */
+    font-size: 1rem; /* Adjust font size */
+    margin-top: 5px;
+    font-weight: 200;
+    text-align: right; /* Right-align the text */
 }
 
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .swiper-slide img {
-        width: 60%; /* Image width for mobile devices */
-    }
+    
 }
 
 @media (min-width: 769px) {
-    .swiper-slide img {
-        width: 40%; /* Image width for larger screens */
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 50px;
+        height: 50px;
     }
-}
-
-/* Optional: Customize pagination bullets */
-.swiper-pagination-bullet {
-    background: #007bff;
-}
-
-/* Optional: Customize navigation buttons */
-.swiper-button-next,
-.swiper-button-prev {
-    color: #007bff;
-}
-
-
-@media (max-width: 768px) {
-    .item {
-        flex: 1 1 100%; /* Full width on small screens */
-    }
-}
-
-/* Thumbnails: Faded by default */
-.thumb-swiper .swiper-slide {
-    cursor: pointer;
-    opacity: 0.5;
-    transition: opacity 0.3s ease, background-color 0.3s ease;
-}
-
-/* Highlighted thumbnail */
-.thumb-swiper .swiper-slide-active {
-    opacity: 1; /* Highlight active thumbnail */
-    background-color: gray;
 }
