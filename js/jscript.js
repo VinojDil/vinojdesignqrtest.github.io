@@ -104,8 +104,8 @@ const videoFiles = [
 
   // Second Video Slider with Descriptions
 const secondVideoFiles = [
-    { src: "images/AIR SUPPORT BRA.mp4", description: "Description for Video 1" },
-    { src: "images/AIR SUPPORT BRA - Copy.mp4", description: "Description for Video 2" },
+  { src: "images/AIR SUPPORT BRA.mp4", description: "Description for Video 1" },
+  { src: "images/AIR SUPPORT BRA - Copy.mp4", description: "Description for Video 2" },
     // Add more video paths and descriptions as needed
   ];
   
@@ -145,3 +145,32 @@ const secondVideoFiles = [
       }
     });
   });
+
+// Check if there are no images or videos and hide the respective sliders
+
+// Check if secondVideoFiles has content
+if (secondVideoFiles.length === 0) {
+  // Select all elements with id='video2'
+  const video2Elements = document.querySelectorAll('#video2');
+  const video1Elements = document.querySelectorAll('#video1');
+  const img1Elements = document.querySelectorAll('#img1');
+  const img2Elements = document.querySelectorAll('#img2');
+
+  // Hide each of them
+  video2Elements.forEach(element => {
+    element.style.display = 'none';
+  });
+
+  video1Elements.forEach(element => {
+    element.style.display = 'none';
+  });
+
+  img1Elements.forEach(element => {
+    element.style.display = 'none';
+  });
+
+  img2Elements.forEach(element => {
+    element.style.display = 'none';
+  });
+
+}
