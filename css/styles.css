@@ -67,7 +67,7 @@ body {
   }
 
 #videoCarousel .carousel-item video {
-    width: 80%; /* Reduce size to 80% of the row */
+    width: 100%; /* Reduce size to 80% of the row */
     height: auto; /* Maintain aspect ratio */
     margin: auto; /* Center the image */
     display: block;
@@ -132,7 +132,7 @@ body {
   }
 
 #videoCarousel2 .carousel-item video {
-    width: 80%; /* Reduce size to 80% of the row */
+    width: 100%; /* Reduce size to 80% of the row */
     height: auto; /* Maintain aspect ratio */
     margin: auto; /* Center the image */
     display: block;
