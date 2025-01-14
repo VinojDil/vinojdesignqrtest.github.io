@@ -85,7 +85,7 @@ body {
 #rightAlignedText {
     color: #333; /* Adjust text color */
     font-size: 1rem; /* Adjust font size */
-    margin-top: 5px;
+    margin-top: 50px;
     font-weight: 200;
     text-align: right;
     border: 1px solid black; /* Right-align the text */
