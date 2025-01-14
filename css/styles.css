@@ -5,6 +5,8 @@ body {
 
 .container {
     width: max-width;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
     height: auto;
     justify-content:center;
     align-items: center;
@@ -85,7 +87,77 @@ body {
     font-size: 1rem; /* Adjust font size */
     margin-top: 5px;
     font-weight: 200;
-    text-align: right; /* Right-align the text */
+    text-align: right;
+    border: 1px solid black; /* Right-align the text */
+}
+
+#narrativeText {
+    color: #333; /* Adjust text color */
+    font-size: 1rem; /* Adjust font size */
+    margin-top: 5px;
+    font-weight: 200;
+    text-align: center;
+    border: 1px solid black; /* Right-align the text */
+}
+
+.image-slider-last {
+    position: relative; /* Required for absolute positioning of controls */
+    border: 1px solid black;
+    margin-top: 20px; 
+}
+
+.image-slider-last img {
+    width: 60%; /* Reduce size to 80% of the row */
+    height: auto; /* Maintain aspect ratio */
+    margin: auto; /* Center the image */
+    display: block;
+    border: 1px solid black;
+}
+
+#imageDescription {
+    color: #333; /* Adjust text color */
+    font-size: 1rem; /* Adjust font size */
+    margin-top: 5px;
+    font-weight: 200;
+    text-align: center; /* Center-align the description text */
+}
+
+.video-slider-last {
+    margin-top: 50px;
+    border: 1px solid black; /* Center the image */
+}
+
+#videoCarousel2 .carousel-item {
+    height: auto; /* Adjust height as needed */
+  }
+
+#videoCarousel2 .carousel-item video {
+    width: 80%; /* Reduce size to 80% of the row */
+    height: auto; /* Maintain aspect ratio */
+    margin: auto; /* Center the image */
+    display: block;
+    border: 1px solid black;
+}
+
+#BOMText {
+    color: #333; /* Adjust text color */
+    font-size: 1rem; /* Adjust font size */
+    margin-top: 5px;
+    font-weight: 200;
+    text-align: center;
+    border: 1px solid black; /* Right-align the text */
+}
+
+.num_boxes {
+    position: relative; /* Required for absolute positioning of controls */
+    border: 1px solid black;
+    margin-top: 5px; 
+}
+
+.findout {
+    position: relative; /* Required for absolute positioning of controls */
+    border: 1px solid black;
+    margin-top: 5px;
 }
 
 
@@ -100,4 +172,11 @@ body {
         width: 50px;
         height: 50px;
     }
+
+    .num_boxes {
+        align-items: center;
+        text-align: center;
+        align-content: center; 
+    }
+
 }
