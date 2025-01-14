@@ -1,54 +1,74 @@
-// Initialize the thumbnail Swiper
-const thumbSwiper = new Swiper('.thumb-swiper', {
-    slidesPerView: 4, // Show 4 thumbnails
-    spaceBetween: 10, // Space between thumbnails
-    freeMode: true,
-    watchSlidesProgress: true, // Tracks the progress of slides
-    slideToClickedSlide: true, // Allows clicking on a thumbnail to navigate
-});
+// Image Slider with Descriptions
+const images = [
+    { src: "images/4_1.png", description: "Description for Image 1" },
+    { src: "images/5.png", description: "Description for Image 2" }
+  ];
+  
+  const carouselInner = document.getElementById('carouselItems');
+  const descriptionBox = document.getElementById('imageDescription');
+  
+  // Populate carousel items
+  images.forEach((image, index) => {
+    const itemDiv = document.createElement('div');
+    itemDiv.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+    itemDiv.innerHTML = `<img src="${image.src}" class="d-block" alt="Image ${index + 1}">`;
+    carouselInner.appendChild(itemDiv);
+  });
+  
+  // Set initial description
+  descriptionBox.textContent = images[0].description;
+  
+  // Update description on slide change
+  const imageCarousel = document.getElementById('imageCarousel');
+  imageCarousel.addEventListener('slid.bs.carousel', () => {
+    const activeIndex = [...carouselInner.children].findIndex(item =>
+      item.classList.contains('active')
+    );
+    descriptionBox.textContent = images[activeIndex].description;
+  });
 
-// Initialize the main Swiper
-const mainSwiper = new Swiper('.main-swiper', {
-    loop: true, // Enable looping of slides
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    thumbs: {
-        swiper: thumbSwiper, // Link the thumbnail swiper
-    },
-});
+// Video Slider
 
-// Function to update thumbnail styles
-function updateThumbnailHighlight(index) {
-    const allThumbs = document.querySelectorAll('.thumb-swiper .swiper-slide');
-
-    // Reset styles for all thumbnails
-    allThumbs.forEach((thumb, i) => {
-        if (i === index) {
-            thumb.style.opacity = '1'; // Highlight the active thumbnail
-            thumb.style.backgroundColor = 'gray'; // Gray background for active thumbnail
-        } else {
-            thumb.style.opacity = '0.5'; // Fade other thumbnails
-            thumb.style.backgroundColor = 'transparent'; // Clear background for others
-        }
+// Video Slider with Descriptions
+const videoFiles = [
+    { src: "images/AIR SUPPORT BRA.mp4", description: "Description for Video 1" },
+    { src: "images/Embedded wired zonal pad.mp4", description: "Description for Video 2" },
+    // Add more video paths and descriptions as needed
+  ];
+  
+  const videoCarouselInner = document.getElementById('videoCarouselItems');
+  const videoDescriptionBox = document.getElementById('videoDescription');
+  
+  // Populate carousel items
+  videoFiles.forEach((file, index) => {
+    const itemDiv = document.createElement('div');
+    itemDiv.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+    itemDiv.innerHTML = `
+      <video controls>
+        <source src="${file.src}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    `;
+    videoCarouselInner.appendChild(itemDiv);
+  });
+  
+  // Set initial description
+  videoDescriptionBox.textContent = videoFiles[0].description;
+  
+  // Update description on slide change
+  const videoCarousel = document.getElementById('videoCarousel');
+  videoCarousel.addEventListener('slid.bs.carousel', () => {
+    const activeIndex = [...videoCarouselInner.children].findIndex(item => item.classList.contains('active'));
+    videoDescriptionBox.textContent = videoFiles[activeIndex].description;
+  });
+  
+  // Stop playing videos when the slider moves to the next slide
+  videoCarousel.addEventListener('slid.bs.carousel', () => {
+    const videos = videoCarousel.querySelectorAll('video');
+    videos.forEach((video) => {
+      if (!video.closest('.carousel-item.active')) {
+        video.pause(); // Pause the video
+        video.currentTime = 0; // Reset to the beginning (optional)
+      }
     });
-}
-
-// Handle thumbnail click
-thumbSwiper.on('click', (swiper) => {
-    const clickedIndex = swiper.clickedIndex;
-    if (clickedIndex !== undefined && clickedIndex >= 0) {
-        updateThumbnailHighlight(clickedIndex); // Highlight the clicked thumbnail
-    }
-});
-
-// Handle slide change in the main swiper
-mainSwiper.on('slideChange', () => {
-    const activeIndex = mainSwiper.realIndex; // Get the active index in the main swiper
-    updateThumbnailHighlight(activeIndex); // Update thumbnail styles
-});
+  });
