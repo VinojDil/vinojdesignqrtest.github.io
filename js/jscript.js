@@ -1,7 +1,7 @@
 // Image Slider 1 with Descriptions
 const images = [
     { src: "images/LOCKED-AND-LIFTED-HIGH-WAIST-LEGGING-BM2457704-8749-3-1200x1600.jpg", description: "Description for Image 1" },
-    { src: "images/LOCKED-AND-LIFTED-HIGH-WAIST-LEGGING-BM2457704-8749-3-1200x1600.png", description: "Description for Image 2" }
+    { src: "images/LOCKED-AND-LIFTED-HIGH-WAIST-LEGGING-BM2457704-8749-3-1200x1600.jpg", description: "Description for Image 2" }
   ];
   
   const carouselInner = document.getElementById('carouselItems');
@@ -61,7 +61,7 @@ const secondImages = [
 // Video Slider with Descriptions
 const videoFiles = [
     { src: "images/SAVAGE VID.mp4", description: "Description for Video 1" },
-    { src: "SAVAGE VID.mp4", description: "Description for Video 2" },
+    { src: "images/SAVAGE VID.mp4", description: "Description for Video 2" },
     // Add more video paths and descriptions as needed
   ];
   
