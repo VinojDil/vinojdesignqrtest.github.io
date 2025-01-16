@@ -60,7 +60,7 @@ const secondImages = [
 
 // Video Slider with Descriptions
 const videoFiles = [
-    { src: "images/SAVAGE VID.mp4", description: "Description for Video 1" },
+    { src: "images/HUG REDBULLF1 VID.mp4", description: "Description for Video 1" },
     { src: "images/SAVAGE VID.mp4", description: "Description for Video 2" },
     // Add more video paths and descriptions as needed
   ];
